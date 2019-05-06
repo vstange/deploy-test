@@ -1,10 +1,14 @@
-# Build without a specific language and avoid ruby fallback:
-# https://medium.com/@desfocado/how-to-get-travis-to-work-with-no-build-language-9f4c03ed68b1
 language: generic
 
+before_install:
+  - openssl aes-256-cbc -K $encrypted_7aa7c07064dd_key -iv $encrypted_7aa7c07064dd_iv
+    -in $TRAVIS_BUILD_DIR/travis-git.enc -out ~\/.ssh/travis-git -d
+
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: $TRAVIS_BUILD_DIR/deploy.sh
-    on:
-      branch: master
+- provider: script
+  skip_cleanup: true
+  script: "$TRAVIS_BUILD_DIR/deploy.sh"
+  on:
+    branch: master
+
+
