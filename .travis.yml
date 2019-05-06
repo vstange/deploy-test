@@ -1,3 +1,7 @@
+# Build without a specific language and avoid ruby fallback:
+# https://medium.com/@desfocado/how-to-get-travis-to-work-with-no-build-language-9f4c03ed68b1
+language: generic
+
 deploy:
   - provider: script
     skip_cleanup: true
