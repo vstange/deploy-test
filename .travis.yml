@@ -6,9 +6,7 @@ before_install:
 
 # SSH known hosts for deployment reasons
 addons:
-  ssh_known_hosts:
-    - dke01.dke.uni-wuppertal.de
-    - 132.195.228.228
+  ssh_known_hosts: $IP:$PORT
 
 deploy:
 - provider: script
