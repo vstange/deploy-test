@@ -9,9 +9,6 @@ addons:
   ssh_known_hosts:
     - dke01.dke.uni-wuppertal.de:2222
     - dke01.dke.uni-wuppertal.de
-    - 132.195.228.228:2222
-    - 132.195.228.228
-    - ${IP}:${PORT}
 
 deploy:
 - provider: script
