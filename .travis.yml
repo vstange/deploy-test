@@ -4,6 +4,12 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_7aa7c07064dd_key -iv $encrypted_7aa7c07064dd_iv
     -in .travis/travis-git.enc -out ~/.ssh/travis-git -d
 
+# SSH known hosts for deployment reasons
+addons:
+  ssh_known_hosts:
+    - dke01.dke.uni-wuppertal.de
+    - 132.195.228.228
+
 deploy:
 - provider: script
   skip_cleanup: true
