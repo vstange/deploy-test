@@ -9,8 +9,9 @@ git remote add deploy ssh://git@$IP:$PORT$DEPLOY_DIR
 git push deploy master
 
 # Skip this command if you don't need to execute any additional commands after deploying.
+# For now leave a little touch flag
 ssh git@$IP -p $PORT <<EOF
-  touch was_here.txt
+  touch travis-last-deployment-touch
 EOF
 #  cd $DEPLOY_DIR
 #  crystal build --release --no-debug index.cr # Change to whatever commands you need!
